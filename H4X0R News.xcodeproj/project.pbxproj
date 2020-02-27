@@ -13,6 +13,10 @@
 		D6E08CC924016CD4007FF6ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6E08CC824016CD4007FF6ED /* Assets.xcassets */; };
 		D6E08CCC24016CD4007FF6ED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6E08CCB24016CD4007FF6ED /* Preview Assets.xcassets */; };
 		D6E08CCF24016CD4007FF6ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E08CCD24016CD4007FF6ED /* LaunchScreen.storyboard */; };
+		D6E08CD824017669007FF6ED /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E08CD724017669007FF6ED /* NetworkManager.swift */; };
+		D6E08CDA24017AB2007FF6ED /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E08CD924017AB2007FF6ED /* PostData.swift */; };
+		D6E08CDD2401BC69007FF6ED /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E08CDC2401BC69007FF6ED /* DetailView.swift */; };
+		D6E08CDF2401C5ED007FF6ED /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E08CDE2401C5ED007FF6ED /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,11 @@
 		D6E08CCB24016CD4007FF6ED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D6E08CCE24016CD4007FF6ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6E08CD024016CD4007FF6ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6E08CD724017669007FF6ED /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D6E08CD924017AB2007FF6ED /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		D6E08CDC2401BC69007FF6ED /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		D6E08CDE2401C5ED007FF6ED /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		D6E08CE02401C8DC007FF6ED /* H4X0R News.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "H4X0R News.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +65,11 @@
 		D6E08CC124016CD2007FF6ED /* H4X0R News */ = {
 			isa = PBXGroup;
 			children = (
+				D6E08CE02401C8DC007FF6ED /* H4X0R News.entitlements */,
 				D6E08CC224016CD2007FF6ED /* AppDelegate.swift */,
 				D6E08CC424016CD2007FF6ED /* SceneDelegate.swift */,
-				D6E08CC624016CD2007FF6ED /* ContentView.swift */,
+				D6E08CDB2401BC2D007FF6ED /* Views */,
+				D6E08CD62401764F007FF6ED /* Model */,
 				D6E08CC824016CD4007FF6ED /* Assets.xcassets */,
 				D6E08CCD24016CD4007FF6ED /* LaunchScreen.storyboard */,
 				D6E08CD024016CD4007FF6ED /* Info.plist */,
@@ -73,6 +84,25 @@
 				D6E08CCB24016CD4007FF6ED /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D6E08CD62401764F007FF6ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6E08CD724017669007FF6ED /* NetworkManager.swift */,
+				D6E08CD924017AB2007FF6ED /* PostData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D6E08CDB2401BC2D007FF6ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D6E08CC624016CD2007FF6ED /* ContentView.swift */,
+				D6E08CDC2401BC69007FF6ED /* DetailView.swift */,
+				D6E08CDE2401C5ED007FF6ED /* WebView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +176,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6E08CDA24017AB2007FF6ED /* PostData.swift in Sources */,
+				D6E08CDD2401BC69007FF6ED /* DetailView.swift in Sources */,
+				D6E08CD824017669007FF6ED /* NetworkManager.swift in Sources */,
 				D6E08CC324016CD2007FF6ED /* AppDelegate.swift in Sources */,
 				D6E08CC524016CD2007FF6ED /* SceneDelegate.swift in Sources */,
 				D6E08CC724016CD2007FF6ED /* ContentView.swift in Sources */,
+				D6E08CDF2401C5ED007FF6ED /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,8 +318,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "H4X0R News/H4X0R News.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"H4X0R News/Preview Content\"";
+				DEVELOPMENT_TEAM = 9H8NRK4XM5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "H4X0R News/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -294,6 +332,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shumusoft.H4X0R-News";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -303,8 +342,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "H4X0R News/H4X0R News.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"H4X0R News/Preview Content\"";
+				DEVELOPMENT_TEAM = 9H8NRK4XM5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "H4X0R News/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -313,6 +356,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shumusoft.H4X0R-News";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
